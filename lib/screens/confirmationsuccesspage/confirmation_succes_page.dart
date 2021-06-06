@@ -5,7 +5,6 @@ import 'package:cheap_charly/svgimages/svg_images.dart';
 import 'package:cheap_charly/widgets/my_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 class ConfirmationSuccessPage extends StatelessWidget {
   AppBar buildAppbar() {
     return AppBar(
