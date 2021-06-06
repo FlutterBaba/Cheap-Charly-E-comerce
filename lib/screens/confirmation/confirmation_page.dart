@@ -11,7 +11,6 @@ class ConfirmationPage extends StatelessWidget {
       backgroundColor: Colors.transparent,
     );
   }
-
   Widget buildBottomPart(BuildContext context) {
     return Column(
       children: [
