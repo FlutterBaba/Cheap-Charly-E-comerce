@@ -1,18 +1,14 @@
 import 'package:cheap_charly/appColors/app_colors.dart';
 import 'package:cheap_charly/routes/routes.dart';
-import 'package:cheap_charly/screens/confirmationscreen/confirmation_screen.dart';
+import 'package:cheap_charly/screens/confirmation/confirmation_page.dart';
 import 'package:cheap_charly/svgimages/svg_images.dart';
 import 'package:cheap_charly/widgets/my_button_widget.dart';
 import 'package:cheap_charly/widgets/my_textfromfield_widget.dart';
+import 'package:custom_navigator/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PaymentScreen extends StatelessWidget {
-  TextEditingController cardHolderName = TextEditingController();
-  TextEditingController cardNumber = TextEditingController();
-  TextEditingController cardExperDate = TextEditingController();
-  TextEditingController cardCVV = TextEditingController();
-
   Widget buildAppBar() {
     return AppBar(
       elevation: 0,
@@ -38,11 +34,11 @@ class PaymentScreen extends StatelessWidget {
     );
   }
 
-  Widget buildTextField(
-      {double leftPadding,
-      double rightPadding,
-      String hintText,
-      @required TextEditingController controller}) {
+  Widget buildTextField({
+    double leftPadding,
+    double rightPadding,
+    String hintText,
+  }) {
     return Container(
       margin: EdgeInsets.only(
         bottom: 20,
@@ -51,7 +47,6 @@ class PaymentScreen extends StatelessWidget {
         right: rightPadding,
       ),
       child: TextField(
-        controller: controller,
         decoration: InputDecoration(
           hintText: hintText,
           fillColor: Colors.grey[100],
@@ -158,7 +153,7 @@ class PaymentScreen extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      cardHolderName.text,
+                      "**** **** **** **** 1256",
                       style: TextStyle(
                         fontSize: 24.30,
                         fontWeight: FontWeight.bold,
@@ -186,7 +181,7 @@ class PaymentScreen extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Text(
-                                    cardHolderName.text,
+                                    "Aqeel Baloch",
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: AppColors.baseWhiteColor,
@@ -210,7 +205,7 @@ class PaymentScreen extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Text(
-                                    cardExperDate.text,
+                                    "2/21",
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: AppColors.baseWhiteColor,
@@ -240,12 +235,10 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ),
               MyTextFromField(
-                controller: cardHolderName,
                 hintText: "Card holder",
                 obscureText: false,
               ),
               MyTextFromField(
-                controller: cardNumber,
                 hintText: "Card number",
                 obscureText: false,
               ),
@@ -253,7 +246,6 @@ class PaymentScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: buildTextField(
-                      controller: cardExperDate,
                       hintText: "Exp",
                       leftPadding: 20,
                       rightPadding: 0,
@@ -261,7 +253,6 @@ class PaymentScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: buildTextField(
-                      controller: cardCVV,
                       hintText: "CVV",
                       leftPadding: 3,
                       rightPadding: 10,
@@ -366,7 +357,7 @@ class PaymentScreen extends StatelessWidget {
                   onPress: () {
                     PageRouting.goToNextPage(
                       context: context,
-                      navigateTo: ConfirmationScreen(),
+                      navigateTo: ConfirmationPage(),
                     );
                   },
                 ),

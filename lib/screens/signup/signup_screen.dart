@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignupScreen extends StatelessWidget {
-  TextEditingController fullName;
+  
   Widget buildTopPart() {
     return Column(
       children: [
@@ -16,22 +16,18 @@ class SignupScreen extends StatelessWidget {
           height: 150,
         ),
         MyTextFromField(
-          controller: fullName,
           hintText: "Full name",
           obscureText: false,
         ),
         MyTextFromField(
-          controller: fullName,
           hintText: "Email",
           obscureText: false,
         ),
         MyTextFromField(
-          controller: fullName,
           hintText: "Password",
           obscureText: true,
         ),
         MyTextFromField(
-          controller: fullName,
           hintText: "Confirm Password",
           obscureText: true,
         ),

@@ -15,8 +15,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController email;
-  TextEditingController password;
   Widget buildTopPart() {
     return Column(
       children: [
@@ -27,12 +25,10 @@ class _LoginScreenState extends State<LoginScreen> {
         Column(
           children: [
             MyTextFromField(
-              controller: email,
               hintText: "E-mail",
               obscureText: false,
             ),
             MyTextFromField(
-              controller: password,
               hintText: "Password",
               obscureText: true,
             ),
