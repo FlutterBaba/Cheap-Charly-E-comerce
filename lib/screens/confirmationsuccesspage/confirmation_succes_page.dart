@@ -29,7 +29,6 @@ class ConfirmationSuccessPage extends StatelessWidget {
       ],
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
